@@ -5,6 +5,15 @@ interface theme{
     background_color: string
 }
 
+const bodyStyle = document.body.style
+bodyStyle.border = '0px';
+bodyStyle.margin = '0px';
+
+const root: any = document.getElementById('root')
+const rootStyle = root.style
+rootStyle.width = '100vw'
+rootStyle.height = '100vh'
+
 const themes: theme[] = [
     {
         main_color: '#90a9b7',
@@ -55,15 +64,19 @@ const themes: theme[] = [
 const { main_color, background_color } = themes[Math.floor(Math.random() * themes.length)];
 
 const mobile: boolean = window.innerWidth <= 900;
+
 const styles: { [key: string]: CSSProperties } = {
 
     /************************************* Global *************************************/
-
 
     app: {
         'backgroundColor': background_color,
         'fontSize': mobile ? '1.2em' : '1.3em',
         'letterSpacing': '.1px',
+        'overflowX': 'hidden',
+        'width': '100%',
+        'height': '100%',
+
     },
     loading: {
         'justifyContent': 'center',
