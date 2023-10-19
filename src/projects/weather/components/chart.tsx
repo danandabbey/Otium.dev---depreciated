@@ -14,7 +14,7 @@ things to do:
 import { useState, useEffect, useContext} from 'react'
 import { Line } from 'react-chartjs-2';
 import { dataContext } from '../weather_app';
-import { styleContext, mobileContext } from '../../../components/Context'
+import { styleContext } from '../../../components/Context'
 
 import {
     Chart as ChartJS,
