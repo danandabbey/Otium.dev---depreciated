@@ -12,18 +12,6 @@ const Button = (props: any) => {
 
   const styles: any = {
     ButtonStyle: {
-      color: style.chart.color,
-      accentColor: style.chart.accentColor,
-      fontSize: mobile ? "10px" : "100%",
-      paddingRight: mobile ? "2em" : "3em",
-      position: "fixed",
-      right: "0",
-      bottom: "0",
-      textAlign: "center",
-      justifyContent: "center",
-      marginBlock: "0px",
-    },
-    menuItem: {
       textAlign: "center",
       color: style.app.color,
       fontSize: mobile ? "40px" : "60px",
@@ -34,8 +22,8 @@ const Button = (props: any) => {
   };
 
   isHovered
-    ? (styles.ButtonStyle.color = style.chart.accentColor)
-    : (styles.ButtonStyle.color = style.chart.color);
+    ? (styles.ButtonStyle.color = style.app.accentColor)
+    : (styles.ButtonStyle.color = style.app.color);
   isHovered;
 
   if (mobile) {

@@ -65,14 +65,15 @@ const mobile: boolean = window.innerWidth <= 900;
 
 const styles: { [key: string]: CSSProperties } = {
   /************************************* Global *************************************/
+
   app: {
-    color: mainColor,
     display: "flex",
     flexDirection: "column",
     backgroundColor: backgroundColor,
     fontSize: mobile ? "1.2em" : "1.3em",
     letterSpacing: ".1px",
     overflowX: "hidden",
+    accentColor: accentColor,
     width: "100%",
     height: "100%",
   },
@@ -121,7 +122,17 @@ const styles: { [key: string]: CSSProperties } = {
     height: "50%",
     marginBlock: "0px",
   },
-  MenuButtonText: {
+
+  MenuOpenButton: {
+    fontSize: mobile ? "10px" : "100%",
+    paddingRight: mobile ? "2em" : "3em",
+    position: "fixed",
+    right: "0",
+    bottom: "0",
+    textAlign: "center",
+    justifyContent: "center",
+  },
+  MenuOpenButtonText: {
     color: mainColor,
   },
 
