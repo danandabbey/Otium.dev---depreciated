@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import WeatherApp from "../../projects/weather/weather_app";
 import { styleContext } from "../Context";
 import Index from "../Index";
+import MenuButton from "./MenuButton";
 
 const Menu = (props: any) => {
   const style = useContext(styleContext);
@@ -28,14 +29,28 @@ const Menu = (props: any) => {
     };
   }, [controls]);
 
+  const buttons = [
+    {
+      id: "home",
+      title: "Home",
+    },
+    {
+      id: "weather",
+      title: "Weather",
+    },
+  ];
+
   return (
     <div style={style.menu} id="menu">
-      <h4 id="home" style={style.menuItem}>
-        Home
-      </h4>
-      <h4 id="weather" style={style.menuItem}>
-        Weather
-      </h4>
+      {buttons.map((button) => {
+        return (
+          <MenuButton
+            key={button.title}
+            id={button.id}
+            title={button.title}
+          />
+        );
+      })}
     </div>
   );
 };

@@ -65,8 +65,8 @@ const mobile: boolean = window.innerWidth <= 900;
 
 const styles: { [key: string]: CSSProperties } = {
   /************************************* Global *************************************/
-
   app: {
+    color: mainColor,
     display: "flex",
     flexDirection: "column",
     backgroundColor: backgroundColor,
@@ -120,16 +120,6 @@ const styles: { [key: string]: CSSProperties } = {
     width: "100%",
     height: "50%",
     marginBlock: "0px",
-  },
-
-  MenuButton: {
-    fontSize: mobile ? "10px" : "100%",
-    paddingRight: mobile ? "2em" : "3em",
-    position: "fixed",
-    right: "0",
-    bottom: "0",
-    textAlign: "center",
-    justifyContent: "center",
   },
   MenuButtonText: {
     color: mainColor,

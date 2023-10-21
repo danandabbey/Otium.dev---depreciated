@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { styleContext } from "../../../../components/Context";
-import Button from "./Button";
+import Button from "./ChartButton";
 
 const Buttons = (props: any) => {
   const style: any = useContext(styleContext);

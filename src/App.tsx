@@ -3,7 +3,7 @@ import Loading from "./components/Loading";
 import { styleContext } from "./components/Context";
 import Menu from "./components/menu/Menu";
 import Index from "./components/Index";
-import MenuButton from "./components/menu/MenuButton";
+import MenuButton from "./components/menu/OpenButton";
 
 const App = (): JSX.Element => {
   const [loading, setLoading]: any = useState(true);
