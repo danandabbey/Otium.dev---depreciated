@@ -67,6 +67,8 @@ const styles: { [key: string]: CSSProperties } = {
   /************************************* Global *************************************/
 
   app: {
+    display: "flex",
+    flexDirection: "column",
     backgroundColor: backgroundColor,
     fontSize: mobile ? "1.2em" : "1.3em",
     letterSpacing: ".1px",
@@ -92,36 +94,36 @@ const styles: { [key: string]: CSSProperties } = {
   title: {
     fontSize: mobile ? "100px" : "250px",
     color: mainColor,
+    paddingBottom: "1em",
   },
 
   /************************************* Menu *************************************/
 
   menu: {
     display: "flex",
-    alignSelf: "center",
+    flexWrap: "wrap",
+    alignItems: "center",
     flexDirection: "column",
     position: "fixed",
+    alignContent: "center",
     right: "0",
     bottom: "0",
-    borderRadius: "5px",
-    backgroundColor: backgroundColor,
     width: mobile ? "100%" : "30%",
-    height: mobile ? "auto" : "30%",
-    zIndex: "1000",
-    margin: "auto",
+    height: mobile ? "auto" : "20%",
+    zIndex: "1",
   },
 
   menuItem: {
     textAlign: "center",
     color: mainColor,
-    fontSize: mobile ? "60px" : "70px",
+    fontSize: mobile ? "40px" : "60px",
     width: "100%",
     height: "50%",
     marginBlock: "0px",
   },
 
   MenuButton: {
-    fontSize: mobile ? "10px" : "30px",
+    fontSize: mobile ? "10px" : "100%",
     paddingRight: mobile ? "2em" : "3em",
     position: "fixed",
     right: "0",
@@ -153,9 +155,10 @@ const styles: { [key: string]: CSSProperties } = {
   /* Current */
 
   currentTitle: {
-    fontSize: mobile ? "50px" : "70px",
+    fontSize: mobile ? "60px" : "80px",
     color: mainColor,
     marginBlock: "0px",
+    padding: "1em",
   },
   current: {
     color: mainColor,

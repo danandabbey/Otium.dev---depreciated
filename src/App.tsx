@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import Loading from "./components/Loading";
 import { styleContext } from "./components/Context";
-import Menu from "./components/Menu";
+import Menu from "./components/menu/Menu";
 import Index from "./components/Index";
-import MenuButton from "./components/MenuButton";
+import MenuButton from "./components/menu/MenuButton";
 
 const App = (): JSX.Element => {
   const [loading, setLoading]: any = useState(true);
