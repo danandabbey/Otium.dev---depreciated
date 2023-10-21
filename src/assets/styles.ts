@@ -98,27 +98,39 @@ const styles: { [key: string]: CSSProperties } = {
 
   menu: {
     display: "flex",
+    alignSelf: "center",
     flexDirection: "column",
     position: "fixed",
-    justifyContent: "center",
-    textAlign: "center",
     right: "0",
     bottom: "0",
     borderRadius: "5px",
     backgroundColor: backgroundColor,
     width: mobile ? "100%" : "30%",
-    height: mobile ? "100%" : "30%",
-    padding: "1em",
+    height: mobile ? "auto" : "30%",
     zIndex: "1000",
     margin: "auto",
   },
 
   menuItem: {
+    textAlign: "center",
     color: mainColor,
     fontSize: mobile ? "60px" : "70px",
     width: "100%",
     height: "50%",
     marginBlock: "0px",
+  },
+
+  MenuButton: {
+    fontSize: mobile ? "10px" : "30px",
+    paddingRight: mobile ? "2em" : "3em",
+    position: "fixed",
+    right: "0",
+    bottom: "0",
+    textAlign: "center",
+    justifyContent: "center",
+  },
+  MenuButtonText: {
+    color: mainColor,
   },
 
   /************************************* Loading *************************************/
@@ -201,6 +213,7 @@ const styles: { [key: string]: CSSProperties } = {
     justifyContent: "center",
     display: "flex",
     flexWrap: "wrap",
+    paddingBottom: mobile ? "0em" : "10em",
   },
   forecast: {
     color: mainColor,

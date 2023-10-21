@@ -3,6 +3,7 @@ import Loading from "./components/Loading";
 import { styleContext } from "./components/Context";
 import Menu from "./components/Menu";
 import Index from "./components/Index";
+import MenuButton from "./components/MenuButton";
 
 const App = (): JSX.Element => {
   const [loading, setLoading]: any = useState(true);
@@ -15,20 +16,6 @@ const App = (): JSX.Element => {
     setLoading(false);
   }, []);
 
-  useEffect(() => {
-    const keyDown = (event: any) => {
-      if (event.code === "Escape") {
-        setMenuActive((prevMenuOpen) => !prevMenuOpen);
-      }
-    };
-
-    document.addEventListener("keydown", keyDown);
-
-    return () => {
-      document.removeEventListener("keydown", keyDown);
-    };
-  }, []);
-
   const menuControls = {
     menu: setMenuActive,
     view: setView,
@@ -37,7 +24,11 @@ const App = (): JSX.Element => {
   return (
     <div style={style.app}>
       {loading ? <Loading /> : view}
-      {menuActive && <Menu controls={menuControls} />}
+      {menuActive ? (
+        <Menu controls={menuControls} />
+      ) : (
+        <MenuButton controls={setMenuActive} />
+      )}
     </div>
   );
 };
