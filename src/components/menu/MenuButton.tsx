@@ -28,7 +28,7 @@ const Button = (props: any) => {
 
   if (mobile) {
     return (
-      <h4 id={id} style={styles.menuItem}>
+      <h4 id={id} style={styles.ButtonStyle}>
         {title}
       </h4>
     );
@@ -36,7 +36,7 @@ const Button = (props: any) => {
     return (
       <h4
         id={id}
-        style={styles.menuItem}
+        style={styles.ButtonStyle}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

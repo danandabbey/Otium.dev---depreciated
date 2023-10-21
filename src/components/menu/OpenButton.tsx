@@ -6,15 +6,14 @@ const MenuButton = (props: any) => {
   const { controls } = props;
 
   return (
-    <div style={style.MenuOpenButton}>
+    <div style={style.menuOpenButton}>
       <h1
         id="menuButton"
-        style={style.MenuOpenButtonText}
+        style={style.menuOpenButtonText}
         onClick={() => controls(true)}
       >
         Menu
       </h1>
-      ;
     </div>
   );
 };

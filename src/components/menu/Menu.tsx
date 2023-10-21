@@ -49,7 +49,7 @@ const Menu = (props: any) => {
             id={button.id}
             title={button.title}
           />
-        );
+        )
       })}
     </div>
   );

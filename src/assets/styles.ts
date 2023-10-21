@@ -69,6 +69,7 @@ const styles: { [key: string]: CSSProperties } = {
   app: {
     display: "flex",
     flexDirection: "column",
+    color: mainColor,
     backgroundColor: backgroundColor,
     fontSize: mobile ? "1.2em" : "1.3em",
     letterSpacing: ".1px",
@@ -123,7 +124,7 @@ const styles: { [key: string]: CSSProperties } = {
     marginBlock: "0px",
   },
 
-  MenuOpenButton: {
+  menuOpenButton: {
     fontSize: mobile ? "10px" : "100%",
     paddingRight: mobile ? "2em" : "3em",
     position: "fixed",
@@ -132,7 +133,7 @@ const styles: { [key: string]: CSSProperties } = {
     textAlign: "center",
     justifyContent: "center",
   },
-  MenuOpenButtonText: {
+  menuOpenButtonText: {
     color: mainColor,
   },
 
