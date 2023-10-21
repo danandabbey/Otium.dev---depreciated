@@ -1,228 +1,227 @@
 import { CSSProperties } from "react";
 
-interface theme{
-    main_color: string
-    background_color: string
+interface theme {
+  mainColor: string;
+  backgroundColor: string;
+  accentColor: string;
 }
 
-const bodyStyle = document.body.style
-bodyStyle.border = '0px';
-bodyStyle.margin = '0px';
+const bodyStyle = document.body.style;
+bodyStyle.border = "0px";
+bodyStyle.margin = "0px";
 
-const root: any = document.getElementById('root')
-const rootStyle = root.style
-rootStyle.width = '100vw'
-rootStyle.height = '100vh'
+const root: any = document.getElementById("root");
+const rootStyle = root.style;
+rootStyle.width = "100vw";
+rootStyle.height = "100vh";
 
 const themes: theme[] = [
-    {
-        main_color: '#90a9b7',
-        background_color: '#272727',
-    },
-    {
-        main_color: '#ffffff',
-        background_color: '#3b413c',
-    },
-    {
-        main_color: '#bfc0c0',
-        background_color: '#2d3142',
-    },
-    {
-        main_color: '#deb841',
-        background_color: '#37323e',
-    },
-    {
-        main_color: '#b4b8ab',
-        background_color: '#153243',
-    },
-    {
-        main_color: '#d64933',
-        background_color: '#2b303a',
-    },
-    {
-        main_color: '#e08dac',
-        background_color: '#153131',
-    },
-        {
-        main_color: '#fcffeb',
-        background_color: '#474350',
-    },
-    {
-        main_color: '#ff715b',
-        background_color: '#4c5b5c',
-    },
-        {
-        main_color: '#f1e0c5',
-        background_color: '#342a21',
-    },
-    {
-        main_color: '#e4d6a7',
-        background_color: '#1c110a',
-    },
+  {
+    mainColor: "#e5c687",
+    backgroundColor: "#121619",
+    accentColor: "#bcb382",
+  },
+  {
+    mainColor: "#bbacc1",
+    backgroundColor: "#545643",
+    accentColor: "#80727b",
+  },
+  {
+    mainColor: "#eff8e2",
+    backgroundColor: "#23022e",
+    accentColor: "#cecfc7",
+  },
+  {
+    mainColor: "#f8f8f8",
+    backgroundColor: "#000100",
+    accentColor: "#a1a6b4",
+  },
+  {
+    mainColor: "#35ce8d",
+    backgroundColor: "#93827f",
+    accentColor: "#6ba292",
+  },
+  {
+    mainColor: "#279af1",
+    backgroundColor: "#131112",
+    accentColor: "#f7f7ff",
+  },
+  {
+    mainColor: "#fcba04",
+    backgroundColor: "#250001",
+    accentColor: "#f3f3f3",
+  },
+  {
+    mainColor: "#c7efcf",
+    backgroundColor: "#333745",
+    accentColor: "#eef5db",
+  },
 ];
 
-const { main_color, background_color } = themes[Math.floor(Math.random() * themes.length)];
+const { mainColor, backgroundColor, accentColor } =
+  themes[Math.floor(Math.random() * themes.length)];
 
 const mobile: boolean = window.innerWidth <= 900;
 
 const styles: { [key: string]: CSSProperties } = {
+  /************************************* Global *************************************/
 
-    /************************************* Global *************************************/
+  app: {
+    backgroundColor: backgroundColor,
+    fontSize: mobile ? "1.2em" : "1.3em",
+    letterSpacing: ".1px",
+    overflowX: "hidden",
+    width: "100%",
+    height: "100%",
+  },
+  loading: {
+    justifyContent: "center",
+    textAlign: "center",
+    width: "100%",
+    height: "100%",
+  },
+  index: {
+    justifyContent: "center",
+    textAlign: "center",
+    width: "100%",
+    height: "100%",
+  },
 
-    app: {
-        'backgroundColor': background_color,
-        'fontSize': mobile ? '1.2em' : '1.3em',
-        'letterSpacing': '.1px',
-        'overflowX': 'hidden',
-        'width': '100%',
-        'height': '100%',
+  /************************************* Index *************************************/
 
-    },
-    loading: {
-        'justifyContent': 'center',
-        'textAlign': 'center',
-        'width': '100%',
-        'height': '100%',
-    },
-    index: {
-        'justifyContent': 'center',
-        'textAlign': 'center',
-        'width': '100%',
-        'height': '100%',
-    },
-    menu: {
-        'display': 'flex',
-        'flexDirection': 'column',
-        'position': 'fixed',
-        'justifyContent': 'center',
-        'textAlign': 'center',
-        'alignItems' : 'center',
-        'right': '0',
-        'bottom': '0',
-        'borderRadius': '5px',
-        'backgroundColor': background_color,
-        'width': mobile ? '100%' : '30%',
-        'height': mobile ? '100%' : '30%',
-        'padding': '1em',
-        'zIndex': '1000',
-        'margin' : 'auto'
-    },
+  title: {
+    fontSize: mobile ? "100px" : "250px",
+    color: mainColor,
+  },
 
-    /************************************* Index *************************************/
+  /************************************* Menu *************************************/
 
-    title: {
-        'fontSize': mobile ? '6em' : '8em',
-        'color':main_color,
-    }, 
+  menu: {
+    display: "flex",
+    flexDirection: "column",
+    position: "fixed",
+    justifyContent: "center",
+    textAlign: "center",
+    right: "0",
+    bottom: "0",
+    borderRadius: "5px",
+    backgroundColor: backgroundColor,
+    width: mobile ? "100%" : "30%",
+    height: mobile ? "100%" : "30%",
+    padding: "1em",
+    zIndex: "1000",
+    margin: "auto",
+  },
 
-    /************************************* Menu *************************************/
-    
-    menuItem: {
-        'color': main_color,
-        'fontSize': mobile ? '1em' : '2em',
-        'width': '100%',
-        'height': '50%',
-    },
-    
-    /************************************* Loading *************************************/
-    
-    loadingDot: {
-        'color': main_color,
-        'justifyContent': 'center',
-        'textAlign': 'center',
-        'fontSize': mobile ? '4em' : '5em',
-    },
-    
-    /************************************* Weather *************************************/
+  menuItem: {
+    color: mainColor,
+    fontSize: mobile ? "60px" : "70px",
+    width: "100%",
+    height: "50%",
+    marginBlock: "0px",
+  },
 
-    weatherApp: {
-        'fontSize': mobile ? '1.2em' : '1.3em',
-        'width': '100%',
-        'height': '100%',
-    },
+  /************************************* Loading *************************************/
 
-    /* Current */
+  loadingDot: {
+    color: mainColor,
+    justifyContent: "center",
+    textAlign: "center",
+    fontSize: mobile ? "4em" : "5em",
+  },
 
-    currentTitle: {
-        'fontSize': '2em',
-        'color':main_color
+  /************************************* Weather *************************************/
 
-    },
-    current: {
-        'color': main_color,
-        'gap': '.2em',
-        'padding': '2em',
-        'display': 'flex',
-        'flexDirection': 'column',
-        'justifySelf': 'center',
-        'alignItems': 'center',
-        'textAlign': 'center'
-    },
+  weatherApp: {
+    fontSize: mobile ? "20px" : "30px",
+    width: "100%",
+    height: "100%",
+  },
 
-    /* Chart */
+  /* Current */
 
-    chart: {
-        'color': main_color,
-        'borderTop': `solid ${main_color} .1em`,
-        'borderBottom': `solid ${main_color} .1em`,
-        'paddingLeft': '.5em',
-    },
-    chartCon: {
-        'color': main_color,
-        'display': 'flex',
-        'justifyContent': 'center',
-        'alignItems': 'center'
-    },
-    chartBtn: {
-        'color': main_color,
-        'border': `1px ${main_color} solid`,
-        'borderRadius': '5px',
-        'fontSize': '1em',
-        'padding': '.3em',
-    },
-    chartBtnCon: {
-        'gap': mobile ? '1em' : '2em',
-        'paddingTop': '1em',
-        'paddingBottom': '1em',
-        'display': 'flex',
-        'flexDirection': 'row',
-        'flexWrap': 'wrap',
-        'justifyContent': 'center',
-    },
-    chart_and_buttons: {
-        'width' : '70%',
-        'display': 'flex',
-        'flexDirection': 'column'
-    },
+  currentTitle: {
+    fontSize: mobile ? "50px" : "70px",
+    color: mainColor,
+    marginBlock: "0px",
+  },
+  current: {
+    color: mainColor,
+    gap: ".2em",
+    display: "flex",
+    flexDirection: "column",
+    justifySelf: "center",
+    alignItems: "center",
+    textAlign: "center",
+    marginBlock: "0px",
+    marginBottom: "2em",
+    marginTop: "2em",
+  },
+  currentItem: {
+    padding: "10px",
+    marginBlock: "0px",
+    fontSize: mobile ? "20px" : "30px",
+  },
 
-    /* Twelve-Hour */
+  /* Chart */
 
-    twelveHour: {
-        'color': main_color,
-        'alignItems': 'center',
-        'justifyContent': 'center',
-        'display': 'flex',
-        'flexWrap': 'wrap',
-    },
-    forecast: {
-        'color': main_color,
-        'padding': mobile ? '1.5em' : '2em',
-        'display': 'flex',
-        'flexDirection': 'column',
-        'alignItems': 'center',
-        'justifyContent': 'center',
-        'textAlign': 'center',
-    },
-    forecast_name: {
-        'fontSize': mobile ? '1.6em' : '1.5em',
-        'margin': '.5em',
-    },
-    forecast_precipitation: {
-        'margin': '.5em',
-    },
-    forecast_temp: {
-        'margin': '.5em',
-    },
+  chart: {
+    accentColor: accentColor,
+    color: mainColor,
+    borderTop: `solid ${mainColor} .1em`,
+    borderBottom: `solid ${mainColor} .1em`,
+    paddingLeft: ".5em",
+  },
+  chartCon: {
+    color: mainColor,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  chartBtnCon: {
+    gap: mobile ? "1em" : "2em",
+    paddingTop: "1em",
+    paddingBottom: "1em",
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+  },
+  chart_and_buttons: {
+    width: "70%",
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  /* Twelve-Hour */
+
+  twelveHour: {
+    color: mainColor,
+    alignItems: "center",
+    justifyContent: "center",
+    display: "flex",
+    flexWrap: "wrap",
+  },
+  forecast: {
+    color: mainColor,
+    padding: mobile ? "1.5em" : "2em",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    fontSize: mobile ? "20px" : "30px",
+  },
+  forecast_name: {
+    fontSize: mobile ? "30px" : "50px",
+    padding: "20px",
+    marginBlock: "0px",
+  },
+  forecast_Item: {
+    fontSize: mobile ? "20px" : "30px",
+    marginBlock: "0px",
+    padding: "10px",
+  },
 };
 
 export default styles;
