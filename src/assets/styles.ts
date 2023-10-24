@@ -1,10 +1,5 @@
 import { CSSProperties } from "react";
-
-interface theme {
-  mainColor: string;
-  backgroundColor: string;
-  accentColor: string;
-}
+import themes from "./themes";
 
 const bodyStyle = document.body.style;
 bodyStyle.border = "0px";
@@ -14,49 +9,6 @@ const root: any = document.getElementById("root");
 const rootStyle = root.style;
 rootStyle.width = "100vw";
 rootStyle.height = "100vh";
-
-const themes: theme[] = [
-  {
-    mainColor: "#e5c687",
-    backgroundColor: "#121619",
-    accentColor: "#bcb382",
-  },
-  {
-    mainColor: "#bbacc1",
-    backgroundColor: "#545643",
-    accentColor: "#80727b",
-  },
-  {
-    mainColor: "#eff8e2",
-    backgroundColor: "#23022e",
-    accentColor: "#cecfc7",
-  },
-  {
-    mainColor: "#f8f8f8",
-    backgroundColor: "#000100",
-    accentColor: "#a1a6b4",
-  },
-  {
-    mainColor: "#35ce8d",
-    backgroundColor: "#93827f",
-    accentColor: "#6ba292",
-  },
-  {
-    mainColor: "#279af1",
-    backgroundColor: "#131112",
-    accentColor: "#f7f7ff",
-  },
-  {
-    mainColor: "#fcba04",
-    backgroundColor: "#250001",
-    accentColor: "#f3f3f3",
-  },
-  {
-    mainColor: "#c7efcf",
-    backgroundColor: "#333745",
-    accentColor: "#eef5db",
-  },
-];
 
 const { mainColor, backgroundColor, accentColor } =
   themes[Math.floor(Math.random() * themes.length)];

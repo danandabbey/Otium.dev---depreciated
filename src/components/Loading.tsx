@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { styleContext } from "./Context";
 
 const Loading = () => {
-  const [view, setView] = useState(".");
+  const [view, setView] = useState('.');
   const style: any = useContext(styleContext);
 
   useEffect(() => {
