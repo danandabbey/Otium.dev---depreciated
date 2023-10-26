@@ -9,6 +9,7 @@ const root: any = document.getElementById("root");
 const rootStyle = root.style;
 rootStyle.width = "100vw";
 rootStyle.height = "100vh";
+rootStyle.fontFamily = "'Lato', sans-serif";
 
 const { mainColor, backgroundColor, accentColor } =
   themes[Math.floor(Math.random() * themes.length)];
@@ -17,7 +18,6 @@ const mobile: boolean = window.innerWidth <= 900;
 
 const styles: { [key: string]: CSSProperties } = {
   /************************************* Global *************************************/
-
   app: {
     display: "flex",
     flexDirection: "column",
