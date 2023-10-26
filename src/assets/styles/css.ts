@@ -30,12 +30,6 @@ const styles: { [key: string]: CSSProperties } = {
     width: "100%",
     height: "100%",
   },
-  loading: {
-    justifyContent: "center",
-    textAlign: "center",
-    width: "100%",
-    height: "100%",
-  },
   index: {
     justifyContent: "center",
     textAlign: "center",
@@ -90,12 +84,41 @@ const styles: { [key: string]: CSSProperties } = {
   },
 
   /************************************* Loading *************************************/
-
+  loading: {
+    justifyContent: "center",
+    textAlign: "center",
+    width: "100%",
+    height: "100%",
+  },
   loadingDot: {
     color: mainColor,
     justifyContent: "center",
     textAlign: "center",
     fontSize: mobile ? "4em" : "5em",
+  },
+  /************************************* CustomError *************************************/
+  ErrorContainer: {
+    justifyContent: "center",
+    textAlign: "center",
+    width: "100%",
+    height: "100%",
+  },
+  Error: {
+    color: mainColor,
+    display: "flex",
+    textAlign: "center",
+    flexDirection: "column",
+    width: "60%",
+    height: "20%",
+    border: `1px solid ${mainColor}`,
+    padding: "1em",
+  },
+  ErrorTitle: {
+    fontSize: mobile ? "40px" : "60px",
+    marginBlock: "0px",
+  },
+  ErrorMessage: {
+    fontSize: mobile ? "20px" : "30px",
   },
 
   /************************************* Weather *************************************/

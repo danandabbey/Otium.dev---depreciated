@@ -1,8 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import { styleContext } from "./Context";
+import CustomError from "./CustomError";
 
 const Loading = () => {
-  const [view, setView] = useState(".");
+  const [view, setView] = useState<any>(".");
   const style: any = useContext(styleContext);
 
   useEffect(() => {
@@ -11,7 +12,7 @@ const Loading = () => {
       if (n < 10) {
         setView((msg: any) => msg + "."), n++;
       } else {
-        setView("Something went wrong, \n please try again later.");
+        setView(<CustomError />);
         clearInterval(interval);
       }
     }, 500);
