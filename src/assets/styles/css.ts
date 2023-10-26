@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import themes from "./themes";
+import themes from "./colorThemes";
 
 const bodyStyle = document.body.style;
 bodyStyle.border = "0px";

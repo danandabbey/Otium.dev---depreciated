@@ -1,5 +1,5 @@
 import { useState, useEffect, createContext } from "react";
-import styles from "../assets/styles";
+import styles from "../assets/styles/css";
 import { handleLocation } from "../assets/util";
 import Loading from "./Loading";
 

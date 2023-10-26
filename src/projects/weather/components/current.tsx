@@ -4,17 +4,17 @@ import { styleContext } from "../../../components/Context";
 
 const Current = () => {
   try {
-    const data: any = useContext(dataContext);
-    const style: any = useContext(styleContext);
-    const currentData = {
-      desc: data.current.description,
-      precipitation: `${data.current.precipitation}% chance`,
-      temp: `${data.current.temp}\u00b0F`,
-      humidity: `Humidity: ${data.current.humidity}%`,
-      wind: `Wind: ${data.current.windDirection} ${data.current.windSpeed}`,
-      city: data.current.city,
-      state: data.current.state,
-    };
+    const data: any = useContext(dataContext),
+      style: any = useContext(styleContext),
+      currentData = {
+        desc: data.current.description,
+        precipitation: `${data.current.precipitation}% chance`,
+        temp: `${data.current.temp}\u00b0F`,
+        humidity: `Humidity: ${data.current.humidity}%`,
+        wind: `Wind: ${data.current.windDirection} ${data.current.windSpeed}`,
+        city: data.current.city,
+        state: data.current.state,
+      };
     return (
       <div style={style.current}>
         <div>
