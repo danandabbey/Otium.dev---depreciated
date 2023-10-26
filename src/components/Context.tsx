@@ -3,15 +3,15 @@ import styles from "../assets/styles";
 import { handleLocation } from "../assets/util";
 import Loading from "./Loading";
 
-export const styleContext = createContext(styles);
-export const locationContext = createContext({});
-export const mobileContext = createContext(window.innerWidth <= 900);
+export const styleContext = createContext(styles),
+  locationContext = createContext({}),
+  mobileContext = createContext(window.innerWidth <= 900);
 
 const ContextProvider = (props: any) => {
-  const [loading, setLoading] = useState(true);
-  const [style, setStyle]: any = useState(styles);
-  const [mobile, setMobile]: any = useState(window.innerWidth <= 900);
-  const [location, setLocation]: any = useState({});
+  const [loading, setLoading] = useState(true),
+    [style, setStyle]: any = useState(styles),
+    [mobile, setMobile]: any = useState(window.innerWidth <= 900),
+    [location, setLocation]: any = useState({});
 
   useEffect(() => {
     handleLocation(setLocation, setLoading);
