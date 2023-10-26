@@ -19,8 +19,7 @@ function weather_app() {
   const [data, setData]: any = useState<any>({});
   const [isLoading, setLoading]: any = useState(true);
   const ip = "34.173.169.155";
-  const port: number = 443;
-  const serverURL = `https://${ip}:${port}`;
+  const serverURL = `https://${ip}/api`;
 
   const location: any = useContext(locationContext);
 
