@@ -29,7 +29,7 @@ function weather_app() {
       if (location) {
         let data = { lat: location.latitude, lon: location.longitude };
         const resp: any = await axios
-          .post(`${serverURL}/weather`, data)
+          .post(serverURL, data)
           .catch((error) => {
             if (error.response) {
               console.error(error.response.data);
