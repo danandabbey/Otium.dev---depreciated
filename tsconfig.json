@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "target": "ESNext",
+    "target": "ES6",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "CommonJS",
+    "module": "ES6",
     "skipLibCheck": true,
 
     /* Bundler mode */

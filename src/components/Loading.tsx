@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { styleContext } from "./Context";
 import CustomError from "./CustomError";
 
-const Loading = () => {
+const Loading = (): React.ReactNode => {
   const [view, setView] = useState<any>(".");
   const style: any = useContext(styleContext);
 

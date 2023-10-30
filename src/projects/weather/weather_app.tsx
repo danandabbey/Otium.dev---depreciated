@@ -5,22 +5,29 @@ import TwelveHour from "./components/twelveHours";
 import Chart from "./components/chart/ChartCon";
 import Loading from "../../components/Loading";
 //import ChartOpenButton from "./components/ChartOpenButton";
+import { localContext } from "../../App";
 import {
   styleContext,
   mobileContext,
   locationContext,
 } from "../../components/Context";
-
 export const dataContext = createContext({});
 
 function weather_app() {
+  const local = useContext(localContext);
   const style = useContext(styleContext);
   const mobile: any = useContext(mobileContext);
   const [data, setData]: any = useState<any>({});
   const [isLoading, setLoading]: any = useState(true);
-  const ip = "otium.dev";
-  const serverURL = `https://${ip}/weather`;
-
+  let ip = "";
+  let serverURL = ``;
+  if (local) {
+    ip = "localhost";
+    serverURL = `http://${ip}:5000/weather`;
+  } else {
+    ip = "otium.dev";
+    serverURL = `https://${ip}/weather`;
+  }
   const location: any = useContext(locationContext);
 
   useEffect(() => {

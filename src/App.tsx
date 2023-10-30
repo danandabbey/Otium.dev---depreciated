@@ -1,11 +1,14 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, createContext } from "react";
 import Loading from "./components/Loading";
 import { styleContext } from "./components/Context";
 import Menu from "./components/menu/Menu";
 import Index from "./components/Index";
 import MenuButton from "./components/menu/OpenButton";
+export const localContext = createContext({});
 
 const App = (): JSX.Element => {
+  const globalLocal = true;
+  const [local, setLocal]: any = useState(globalLocal);
   const [loading, setLoading]: any = useState(true);
   const style = useContext(styleContext);
   const [view, setView] = useState(<Loading />);
@@ -14,6 +17,7 @@ const App = (): JSX.Element => {
   useEffect(() => {
     setView(<Index />);
     setLoading(false);
+    setLocal(globalLocal);
   }, []);
 
   const menuControls = {
@@ -22,14 +26,16 @@ const App = (): JSX.Element => {
   };
 
   return (
-    <div style={style.app}>
-      {loading ? <Loading /> : view}
-      {menuActive ? (
-        <Menu controls={menuControls} />
-      ) : (
-        <MenuButton controls={setMenuActive} />
-      )}
-    </div>
+    <localContext.Provider value={local}>
+      <div style={style.app}>
+        {loading ? <Loading /> : view}
+        {menuActive ? (
+          <Menu controls={menuControls} />
+        ) : (
+          <MenuButton controls={setMenuActive} />
+        )}
+      </div>
+    </localContext.Provider>
   );
 };
 
