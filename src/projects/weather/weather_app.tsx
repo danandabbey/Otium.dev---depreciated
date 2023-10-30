@@ -22,10 +22,9 @@ function weather_app() {
   let ip = "";
   let serverURL = ``;
   if (local) {
-    ip = "localhost";
-    serverURL = `http://${ip}:5000/weather`;
+    serverURL = `http://localhost:5000/weather`;
   } else {
-    ip = "otium.dev";
+    ip = "35.225.42.42";
     serverURL = `https://${ip}/weather`;
   }
   const location: any = useContext(locationContext);
