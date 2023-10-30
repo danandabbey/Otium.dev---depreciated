@@ -11,6 +11,7 @@ import {
   mobileContext,
   locationContext,
 } from "../../components/Context";
+import CustomError from "../../components/CustomError";
 export const dataContext = createContext({});
 
 function weather_app() {
@@ -19,6 +20,8 @@ function weather_app() {
   const mobile: any = useContext(mobileContext);
   const [data, setData]: any = useState<any>({});
   const [isLoading, setLoading]: any = useState(true);
+  const [err, setErr]: any = useState(false);
+
   let ip = "";
   let serverURL = ``;
   if (local) {
@@ -61,7 +64,8 @@ function weather_app() {
   return (
     <div className="app" style={style.app}>
       {isLoading ? <Loading /> : null}
-      {!isLoading && data ? (
+      {err ? <CustomError /> : null}
+      {!isLoading && !err && data ? (
         <dataContext.Provider value={data}>
           <Current />
           {mobile ? null : <Chart />}
